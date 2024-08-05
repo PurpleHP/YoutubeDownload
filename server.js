@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-app.post('/getVideoInfo', async (req, res) => {
+app.post('/getMp4', async (req, res) => {
     const url = req.body.url;
     if (!url) {
         return res.status(400).json({ error: 'Invalid YouTube URL' });
