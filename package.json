@@ -1,9 +1,17 @@
 {
+  "name": "youtube-downloader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
+    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
-    "express": "^4.19.2",
-    "node": "^20.16.0",
-    "youtube-dl-exec": "^3.0.7",
-    "ytdl-core": "^4.11.5"
-  }
+    "express": "^4.17.1",
+    "ytdl-core": "^4.9.1"
+  },
+  "author": "",
+  "license": "ISC"
 }
