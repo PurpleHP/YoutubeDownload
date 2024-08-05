@@ -4,7 +4,15 @@ const bodyParser = require('body-parser');
 const youtubedl = require('youtube-dl-exec');
 const app = express();
 
-app.use(cors());
+
+const corsOptions = {
+    origin: 'https://www.merttaylan.dev/', 
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    preflightContinue: false,
+    optionsSuccessStatus: 204
+};
+
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 app.post('/getMp4', async (req, res) => {
