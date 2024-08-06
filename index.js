@@ -36,7 +36,7 @@ app.post('/getMp4', async (req, res) => {
             downloadUrl: output.url
         };
 
-        res.json(output);
+        res.json(response);
     } catch (error) {
         console.error('Error fetching video info', error);
         res.status(500).json({ error: 'Error fetching video info' });
