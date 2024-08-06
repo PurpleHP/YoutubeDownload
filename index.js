@@ -29,6 +29,13 @@ app.post('/getMp4', async (req, res) => {
             preferFreeFormats: true,
             addHeader: ['referer:youtube.com', 'user-agent:googlebot']
         });
+
+        //only send specific data
+        const response = {
+            title: output.title,
+            downloadUrl: output.url
+        };
+
         res.json(output);
     } catch (error) {
         console.error('Error fetching video info', error);
