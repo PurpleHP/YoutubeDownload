@@ -6,7 +6,7 @@ const app = express();
 
 
 const corsOptions = {
-    origin: 'https://www.merttaylan.dev/', // Allow all origins. Adjust this to your needs.
+    origin: 'https://www.merttaylan.dev', 
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     preflightContinue: false,
     optionsSuccessStatus: 204
