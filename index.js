@@ -43,6 +43,19 @@ app.post('/getMp4', async (req, res) => {
     }
 });
 
+exec('python --version', (error, stdout, stderr) => {
+    if (error) {
+        console.error(`Error fetching Python version: ${error.message}`);
+        return;
+    }
+    if (stderr) {
+        console.error(`Python version stderr: ${stderr}`);
+        return;
+    }
+    console.log(`Python version: ${stdout.trim()}`);
+});
+
+
 const PORT = process.env.PORT || 10000;
 
 app.listen(PORT, () => {
