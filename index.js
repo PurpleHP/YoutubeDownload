@@ -37,10 +37,14 @@ app.post('/getMp3', async (req, res) => {
             addHeader: ['referer:youtube.com', 'user-agent:googlebot']
           })
 
+          const highestPreferenceThumbnail = output.thumbnails.reduce((prev, current) => {
+            return (prev.preference >= current.preference) ? prev : current;
+            });
+
           const result = {
             "title": output.title,
             "url": output.requested_formats[1].url,
-            "url2": output.requested_formats[0].url
+            "thumbnail": highestPreferenceThumbnail.url
         };
         res.status(200).json(result);
     } catch (error) {
