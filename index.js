@@ -40,8 +40,8 @@ app.post('/getMp3', async (req, res) => {
           const result = {
             "title": output.title,
             "url": output.requested_formats[1].url,
-          }
-          res.status(204).json(result);
+        };
+        res.status(200).json(result);
     } catch (error) {
         console.error('Error fetching video info', error);
         res.status(500).json({ error: 'Error fetching video info' });
