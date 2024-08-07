@@ -40,6 +40,7 @@ app.post('/getMp3', async (req, res) => {
           const result = {
             "title": output.title,
             "url": output.requested_formats[1].url,
+            "url2": output.requested_formats[0].url
         };
         res.status(200).json(result);
     } catch (error) {
